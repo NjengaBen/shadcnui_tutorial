@@ -12,6 +12,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 async function getRecipes() {
   const data = await fetch("http://localhost:4000/recipes");
+
+  //delay response
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   return data.json();
 }
 
